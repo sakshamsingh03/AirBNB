@@ -21,7 +21,7 @@ export default function Navbar() {
         />
 
         {/* Navigation Links */}
-        <div className="flex flex-row text-gray-500 gap-x-3 text-sm">
+        <div className="flex flex-row text-gray-500 gap-x-3 text-sd">
           <p className="hover:bg-gray-200 px-3 py-2 rounded-full hover:text-black cursor-pointer">
             Stays
           </p>
