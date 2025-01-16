@@ -7,9 +7,12 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        'sd': '1.100rem', // 14px
+        'sd': '1.100rem',
+      },
+      colors: {
+        airbnb: '#ff385c', 
       },
     },
   },
   plugins: [],
-}
+};

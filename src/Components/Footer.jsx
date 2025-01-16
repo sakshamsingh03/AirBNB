@@ -5,7 +5,7 @@ import { IoGlobeOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 p-6">
+    <footer className="bg-gray-100 p-6 my-5">
       <div className="container mx-auto pl-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Support Section */}
