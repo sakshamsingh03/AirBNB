@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { IoGlobeOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
+import LoginPopup from "./LoginPopup"; // Import the LoginPopup component
 
 export default function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showLoginPopup, setShowLoginPopup] = useState(false); // State for login popup
+  const [showSignupPopup, setShowSignupPopup] = useState(false); // State for signup popup
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -21,11 +24,11 @@ export default function Navbar() {
         />
 
         {/* Navigation Links */}
-        <div className="flex flex-row text-gray-500 gap-x-3 text-sd">
+        <div className="flex flex-row text-gray-400 gap-x-3 text-sd pb-3">
           <p className="hover:bg-gray-200 px-3 py-2 rounded-full hover:text-black cursor-pointer">
             Stays
           </p>
-          <p className="hover:bg-gray-200 px-3 py-2 rounded-full hover:text-black cursor-pointer">
+          <p className="hover:bg-gray-200 px-3 py-2  rounded-full hover:text-black cursor-pointer">
             Experiences
           </p>
         </div>
@@ -47,10 +50,24 @@ export default function Navbar() {
           {/* Dropdown Menu */}
           {showDropdown && (
             <div className="absolute top-16 right-0 w-56 bg-white shadow-lg rounded-lg text-sm mr-16">
-              <div className="px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
+              <div
+                className="px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer"
+                onClick={() => {
+                  setShowLoginPopup(false);
+                  setShowSignupPopup(true); // Show signup popup
+                  setShowDropdown(false); // Close dropdown
+                }}
+              >
                 Sign up
               </div>
-              <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <div
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                onClick={() => {
+                  setShowSignupPopup(false);
+                  setShowLoginPopup(true); // Show login popup
+                  setShowDropdown(false); // Close dropdown
+                }}
+              >
                 Log in
               </div>
               <hr className="border-gray-200" />
@@ -67,6 +84,16 @@ export default function Navbar() {
           )}
         </div>
       </div>
+
+      {/* Login Popup */}
+      {showLoginPopup && (
+        <LoginPopup onClose={() => setShowLoginPopup(false)} />
+      )}
+
+      {/* Signup Popup */}
+      {showSignupPopup && (
+        <LoginPopup onClose={() => setShowSignupPopup(false)} />
+      )}
     </>
   );
 }
