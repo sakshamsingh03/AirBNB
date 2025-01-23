@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { IoGlobeOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import LoginPopup from "./LoginPopup"; // Import the LoginPopup component
+import LoginPopup from "./LoginPopup";
 
 export default function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [showLoginPopup, setShowLoginPopup] = useState(false); // State for login popup
-  const [showSignupPopup, setShowSignupPopup] = useState(false); // State for signup popup
+  const [showLoginPopup, setShowLoginPopup] = useState(false); 
+  const [showSignupPopup, setShowSignupPopup] = useState(false); 
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);

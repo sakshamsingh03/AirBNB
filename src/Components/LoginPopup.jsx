@@ -28,7 +28,7 @@ function LoginPopup({ onClose }) {
             </label>
             <select
               id="country"
-              className="block w-full p-3 pt-5 pb-1 border rounded-t-md focus:ring-pink-500 focus:border-pink-500 mt-2"
+              className="block w-full p-3 pt-5 pb-1 border rounded-t-md"
             >
               <option>India (+91)</option>
               <option>United States (+1)</option>
@@ -37,10 +37,10 @@ function LoginPopup({ onClose }) {
           </div>
 
           {/* Phone Number Section */}
-          <div className="relative">
+          <div className="relative mb-0">
             <label
               htmlFor="phone"
-              className="static left-3 top-2 text-xs text-gray-500"
+              className="absolute left-3 top-1 text-xs text-gray-500"
             >
               Phone Number
             </label>
@@ -52,7 +52,7 @@ function LoginPopup({ onClose }) {
                 id="phone"
                 type="text"
                 placeholder=""
-                className="block w-full p-3 border rounded-br-md focus:border-pink-500"
+                className=" w-full p-3 border rounded-br-md "
               />
             </div>
           </div>
